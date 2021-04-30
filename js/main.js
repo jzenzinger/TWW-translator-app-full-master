@@ -23,9 +23,13 @@ function localHistory(input, output) {
 
 function displayStorage(history) {
     var result = "";
-    history.forEach(function (item){
-        result += item.input + " -> " + item.output + "<br>";
-    });
+    ///history.forEach(function (item){
+     //   result += item.input + " -> " + item.output + "<br>";
+   // });
+    //From newer to oldest history 
+    for(var i = history.length - 1; i >= 0; i--) {
+        result += history[i].input + " -> " + history[i].output + "<br>";
+    }
 
     document.getElementById("translationHistory").innerHTML = result;
 }
